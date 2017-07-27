@@ -1,0 +1,60 @@
+package test;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.Random;
+
+public class Trapezium extends Shape {
+	//Уникальные атрибуты класса наследника Trapezium
+	private Color color;
+	private Random random = new Random();
+	private double sideA;
+	private double sideB;
+	private double sideC;
+	private double sideD;
+    
+    //Конструкторы
+    public Trapezium(Random random, double sideA, double sideB, double sideC, double sideD){
+    	super();
+    	this.sideA = sideA;
+    	this.sideB = sideB;
+    	this.sideB = sideC;
+    	this.sideB = sideD;
+    }
+    
+    protected Trapezium(){
+		super();
+		sideA = random.nextDouble() * 100;
+		sideB = random.nextDouble() * 100;
+		sideC = random.nextDouble() * 100;
+		sideD = random.nextDouble() * 100;
+	}
+    
+    //Уникальный метод класса Trapezium, возвращающий длину стороны
+    public double side(){
+    	return sideA;
+    }
+  //Уникальный метод класса Trapezium, возвращающий высоту
+    public double height(){
+		return Math.sqrt((Math.pow(sideC, 2)) - (Math.pow((sideA - sideB), 2)));
+    }
+    
+    //Переопределенные методы класса-родителя Shape
+	@Override
+	public double area() {
+		// TODO Auto-generated method stub
+		return (sideA * sideB)/height();
+	}
+	
+	@Override
+	public void draw(Graphics graph) {
+		int[] x = {450, (int)(450 + sideA), (int)(450 + sideB), (int)(450 + sideC)};
+		int[] y = {200, (int)(200 + sideA), (int)(200 + sideB), (int)(200 + sideC)};
+		graph.drawPolygon(x, y, 4);
+	}
+	
+	@Override
+	public String toString() {
+		return "Фигура: трапеция, " + "площадь: " + area() + " кв. ед., длина стороны: " + sideA + " ед., цвет: " + color + "\n";
+	}
+}
