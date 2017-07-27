@@ -5,15 +5,14 @@ import java.awt.Graphics;
 import java.util.Random;
 
 public class Triangle extends Shape {
-	//Уникальные атрибуты класса наследника Triangle
-	private Color color;
+	
 	private Random random = new Random();
 	private double sideA;
 	private double sideB;
 	private double sideC;
     private double height;
     
-    //Конструкторы
+    //Constructors
     public Triangle(Random random, double sideA, double sideB, double sideC){
     	super();
     	this.sideA = sideA;
@@ -30,12 +29,11 @@ public class Triangle extends Shape {
 		} while ((sideA + sideB) > sideC);
 	}
     
-    //Уникальный метод класса Triangle, возвращающий высоту
+    //Unique methods of a Triangle class, which returns height
     public double height(){
     	return height = 2 * (sideA/sideB);
     }
     
-    //Переопределенные методы класса-родителя Shape
 	@Override
 	public double area() {
 		// TODO Auto-generated method stub
@@ -51,6 +49,6 @@ public class Triangle extends Shape {
 	
 	@Override
 	public String toString() {
-		return "Фигура: треугольник, " + "площадь: " + area() + " кв. ед., высота: " + height() + " ед., цвет: " + color + "\n";
+		return "Shape: triangle, " + "area: " + area() + " sq. un., height: " + height() + " un., color: " + getColor() + "\n";
 	}
 }

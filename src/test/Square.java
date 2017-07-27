@@ -5,13 +5,12 @@ import java.awt.Graphics;
 import java.util.Random;
 
 public class Square extends Shape {
-	//Уникальные атрибуты класса наследника Square
-	private Color color;
+	//Unique attributes of a child class Square
 	private Random random = new Random();
 	private double side;
     private double perimeter;
     
-    //Конструкторы
+    //Constructors
     public Square(Random random, double side){
     	this.side = side;
     }
@@ -21,12 +20,11 @@ public class Square extends Shape {
 		side = random.nextDouble() * 100; 
 	}
     
-    //Уникальный метод класса Square, возвращающий периметр
+    //Unique methods of a Square class, which returns perimeter
     public double perimeter(){
     	return perimeter = side * 4;
     }
     
-    //Переопределенные методы класса-родителя Shape
 	@Override
 	public double area() {
 		// TODO Auto-generated method stub
@@ -40,6 +38,6 @@ public class Square extends Shape {
 	
 	@Override
 	public String toString() {
-		return "Фигура: квадрат, " + "площадь: " + area() + " кв. ед., периметр: " + perimeter() + " ед., цвет: " + color + "\n";
+		return "Shape: square, " + "area: " + area() + " sq. un., perimeter: " + perimeter() + " un., color: " + getColor() + "\n";
 	}
 }

@@ -5,12 +5,11 @@ import java.awt.Graphics;
 import java.util.Random;
 
 public class Circle extends Shape {
-	//Уникальные атрибуты класса наследника Circle
-	private Color color;
+	//Unique attributes of a child class Circle
 	private Random random = new Random();
     private double radius;
     
-    //Конструкторы
+    //Constructors
     public Circle(Random random, double radius){
     	super();
     	this.radius = radius;
@@ -21,12 +20,12 @@ public class Circle extends Shape {
 		radius = random.nextDouble() * 100; 
 	}
     
-    //Уникальный метод класса Circle, который возвращает диаметр
+    //Unique methods of a Circle class, which returns diameter
     public double diameter(){
     	return radius * 2;
     }
     
-    //Переопределенные методы класса-родителя Shape
+    //Overridden methods of a parent class Shape
 	@Override
 	public double area() {
 		// TODO Auto-generated method stub
@@ -39,6 +38,6 @@ public class Circle extends Shape {
 	}
 	@Override
 	public String toString() {
-		return "Фигура: круг, " + "площадь: " + area() + " кв. ед., диаметр: " + diameter() + " ед., цвет: " + color + "\n";
+		return "Shape: circle, " + "area: " + area() + " sq. un., diameter: " + diameter() + " un., color: " + getColor() + "\n";
 	}
 }

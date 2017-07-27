@@ -14,22 +14,22 @@ public class Main {
 		for(int i = 0; i < ranNumber; i++){
 			swt = (int)(random.nextDouble() * 3);
 			switch (swt) {
-			    case 1: 
+			    case 0: 
 			    	shapes[i] = new Circle();
 			        break;
-			    case 2: 
+			    case 1: 
 			    	shapes[i] = new Square();
 			    	break;
-			    case 3: 
+			    case 2: 
 			    	shapes[i] = new Triangle();
 			    	break;
-			    case 4: 
+			    case 3: 
 			    	shapes[i] = new Trapezium();
 			    	break;
 			}
 		}
 		for(int i = 0; i < ranNumber; i++){
-		    shapes[i].toString();
+			System.out.println( shapes[i]);
 		}
 	}
 

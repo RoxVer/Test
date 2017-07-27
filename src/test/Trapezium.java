@@ -5,15 +5,14 @@ import java.awt.Graphics;
 import java.util.Random;
 
 public class Trapezium extends Shape {
-	//Уникальные атрибуты класса наследника Trapezium
-	private Color color;
+	
 	private Random random = new Random();
 	private double sideA;
 	private double sideB;
 	private double sideC;
 	private double sideD;
     
-    //Конструкторы
+    
     public Trapezium(Random random, double sideA, double sideB, double sideC, double sideD){
     	super();
     	this.sideA = sideA;
@@ -30,16 +29,16 @@ public class Trapezium extends Shape {
 		sideD = random.nextDouble() * 100;
 	}
     
-    //Уникальный метод класса Trapezium, возвращающий длину стороны
+    //Method of Trapezium, which returns side length
     public double side(){
     	return sideA;
     }
-  //Уникальный метод класса Trapezium, возвращающий высоту
+  //Method of Trapezium, which returns height
     public double height(){
 		return Math.sqrt((Math.pow(sideC, 2)) - (Math.pow((sideA - sideB), 2)));
     }
     
-    //Переопределенные методы класса-родителя Shape
+    
 	@Override
 	public double area() {
 		// TODO Auto-generated method stub
@@ -55,6 +54,6 @@ public class Trapezium extends Shape {
 	
 	@Override
 	public String toString() {
-		return "Фигура: трапеция, " + "площадь: " + area() + " кв. ед., длина стороны: " + sideA + " ед., цвет: " + color + "\n";
+		return "Shape: trapezium, " + "area: " + area() + " sq. un., side length: " + sideA + " un., color: " + getColor() + "\n";
 	}
 }
